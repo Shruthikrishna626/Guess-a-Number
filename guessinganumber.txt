@@ -1,0 +1,30 @@
+#Guess the Right number!
+#import emoji
+import random
+computer=random.randint(10,20)
+#print(computer)
+guess=False
+chance=0
+print("Let's Start!")
+print("Hello,What's your name?")
+name=input()
+print("Nice name! Okay",name,"Iam guessing a secret number between 10 and 20")
+print("Its your Turn to guess!\n")
+while guess==False and chance<5:
+    guess=int(input())   #guess became true here
+    if guess<computer:
+        print("Your guess is lower than the secret number",name,"!")
+        chance=chance+1
+        print("Try again",name)
+    elif guess>computer:
+        print("Your guess is larger than the secret number",name,"!")
+        chance=chance+1
+        print("Try again",name)
+    elif guess==computer:
+        break;
+    guess=False     #in order to cintinue the while loop
+if guess==computer:
+    print("EXCELLANT!Your guess is correct")
+    print("You guessed in",chance,"tries!")
+else:
+    print("No more guess")
